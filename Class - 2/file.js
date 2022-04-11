@@ -1,25 +1,28 @@
 const fs = require('fs');
-const path = require('path');
 
-console.log("Start");
-let fullPath = path.join(__dirname, 'sample.txt');
-fs.readFile(fullPath, (err, buffer) => {
+console.log("Before");
 
-    if (err)
-        console.log("Error is: ", err);
-
-    else
-        console.log("Buffer is: ", buffer.toString());
-});
-
-fullPath = path.join(__dirname, 'sample2.txt');
-fs.readFile(fullPath, (err, buffer) => {
+//Async Task - 1
+let path = "C:\\Users\\hsang.000\\Desktop\\Harsh\\Web Development\\Brain Mentors\\Node JS\\Class - 2\\sample.txt";
+fs.readFile(path, (err, buffer) => {
 
     if (err)
         console.log("Error is: ", err);
 
     else
         console.log("Buffer is: ", buffer.toString());
-});
+})
 
-console.log("End");
+
+//Async Task - 2
+path = "C:\\Users\\hsang.000\\Desktop\\Harsh\\Web Development\\Brain Mentors\\Node JS\\Class - 2\\sample2.txt";
+fs.readFile(path, (err, buffer) => {
+
+    if (err)
+        console.log("Error is: ", err);
+
+    else
+        console.log("Buffer is: ", buffer.toString());
+})
+
+console.log("After");
