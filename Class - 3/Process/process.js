@@ -1,21 +1,14 @@
 console.log(process.cwd());
 console.log(process.arch);
-
-process.stdout.write('Hi Node JS\n');
-
-console.log(process.platform);
 console.log(process.version);
-console.log(process.cpuUsage());
+console.log(process.platform);
 
-// Attaching events with process
-process.on('exit', (code) => {
+process.stdout.write("Hi Node JS");
 
-    console.log("Node App exit with code: ", code);
-})
+//Overriding console.log
+console.log = function (val) {
 
-process.on('uncaughtException', (err) => {
+    process.stdout.write("Process says -> " + val + "\n");
+}
 
-    console.log(`Some error occurred ${err}`);
-})
-
-show();
+console.log("Hello Node");
