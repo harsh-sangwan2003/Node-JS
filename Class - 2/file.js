@@ -1,10 +1,11 @@
 const fs = require('fs');
+const path = require('path');
 
 console.log("Before");
 
 //Async Task - 1
-let path = "C:\\Users\\hsang.000\\Desktop\\Harsh\\Web Development\\Brain Mentors\\Node JS\\Class - 2\\sample.txt";
-fs.readFile(path, (err, buffer) => {
+let fullPath = path.join(__dirname, "sample.txt");
+fs.readFile(fullPath, (err, buffer) => {
 
     if (err)
         console.log("Error is: ", err);
@@ -15,8 +16,8 @@ fs.readFile(path, (err, buffer) => {
 
 
 //Async Task - 2
-path = "C:\\Users\\hsang.000\\Desktop\\Harsh\\Web Development\\Brain Mentors\\Node JS\\Class - 2\\sample2.txt";
-fs.readFile(path, (err, buffer) => {
+fullPath = path.join(__dirname, "sample2.txt");
+fs.readFile(fullPath, (err, buffer) => {
 
     if (err)
         console.log("Error is: ", err);
