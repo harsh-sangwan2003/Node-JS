@@ -1,8 +1,4 @@
-// const calc = require('./one');
-// console.log(calc);
+const { add, sub } = require('./one'); //one.js
 
-// Node JS was built in 2009 and used common JS features
-const { sub, mul } = require('./one');
-
-sub();
-mul();
+console.log(add);
+console.log(sub);

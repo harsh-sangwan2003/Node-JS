@@ -1,20 +1,6 @@
-// console.log(arguments);
+const add = () => { };
+const sub = () => { };
+const mul = () => { };
 
-// (function (exports, require, module, __filename, __dirname) {
-
-//     console.log("Hello Node JS");
-// })(); //IIFE
-
-//Public pattern
-// module.exports = {
-
-//     add() { },
-//     sub() { }
-// }
-
-const add = () => { }
-const sub = () => { }
-const mul = () => { }
-
-const public = { sub, mul };
+const public = { add, sub };
 module.exports = public;

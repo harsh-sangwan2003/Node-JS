@@ -1,1 +1,1 @@
-console.log("I am test JS");
+console.log("I am test.js");
