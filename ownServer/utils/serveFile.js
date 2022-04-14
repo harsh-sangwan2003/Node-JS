@@ -6,9 +6,9 @@ function readStaticFile(url, response) {
     const dirPath = path.normalize(__dirname + "/..");
 
     if (url == '/')
-        url = "/index.html";
+        url = '/index.html';
 
-    const fullPath = path.join(dirPath, url);
+    const fullPath = path.join(dirPath, 'public', url);
 
     const stream = fs.createReadStream(fullPath);
     stream.pipe(response);
