@@ -1,6 +1,7 @@
 const http = require('http');
 const https = require('https');
 const urlObject = require('url');
+const fs = require('fs');
 
 //This is depreacted -> use URLSearchParams
 const queryString = require('querystring');
@@ -93,8 +94,15 @@ function handleRequestResponse(request, response) {
     }
 }
 
+//Certificates
+const options = {
+
+    key: fs.readFileSync('./cert/key.pem'),
+    cert: fs.readFileSync('./cert/cert.pem')
+}
+
 //Creates a server instance
-const server = http.createServer(handleRequestResponse);
+const server = https.createServer(options, handleRequestResponse);
 
 const serverObj = server.listen(6789, err => {
 
@@ -104,5 +112,3 @@ const serverObj = server.listen(6789, err => {
     else
         console.log("Server started!", serverObj.address().port);
 })
-
-//Certificates
